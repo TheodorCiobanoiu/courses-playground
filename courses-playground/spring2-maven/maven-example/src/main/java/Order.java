@@ -18,7 +18,7 @@ public class Order {
 
     public static boolean addOrder(Connection connection, Customer customer, Order order) throws SQLException {
         if (customer == null) return false;
-        PreparedStatement ps = connection.prepareStatement("INSERT INTO orders" +
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO 'orders'" +
                 " (order_date, shipped_date, status, customer_id) " +
                 "VALUES (DATE ? , DATE ?, ?, ?)");
         ps.setString(1, order.order_date);
